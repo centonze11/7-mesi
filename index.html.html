@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>16/10/2024</title> <!-- Titolo aggiornato -->
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Parisienne', cursive;
+      background-color: #e0f7fa; /* Colore azzurro chiaro per lo sfondo */
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 colonne per desktop */
+      gap: 20px;
+    }
+
+    /* Modifica layout per posizionare il riquadro 7 sotto il riquadro 5 */
+    .riquadro {
+      background-color: #80deea; /* Colore azzurro per i riquadri */
+      border: 2px solid #4dd0e1;
+      border-radius: 10px;
+      padding: 20px;
+      cursor: pointer;
+      font-size: 20px; /* Adattato per schermi piccoli */
+      transition: background-color 0.3s ease, font-size 0.3s ease;
+    }
+
+    .riquadro:hover {
+      background-color: #b2ebf2; /* Effetto hover */
+      font-size: 22px;
+    }
+
+    h1 {
+      color: #00796b;
+      font-size: 36px;
+    }
+
+    /* Media query per adattare la visualizzazione sui telefoni */
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr; /* Disporre i riquadri su una colonna per i telefoni */
+      }
+
+      .riquadro {
+        padding: 30px;
+        font-size: 24px; /* Ingrandire leggermente il testo per migliorare la leggibilità su schermi piccoli */
+      }
+
+      h1 {
+        font-size: 32px; /* Ridurre leggermente la dimensione del titolo sui telefoni */
+      }
+    }
+
+    /* Disposizione speciale per il riquadro 7 */
+    .riquadro-7 {
+      grid-column: 2 / 3; /* Posizionare al centro sotto il riquadro 5 */
+    }
+  </style>
+</head>
+<body>
+  <h1>16/10/2024</h1> <!-- Titolo del sito aggiornato -->
+  <div class="container">
+    <div class="riquadro" onclick="showMessage(this, 'capodanno', 'Hai trovato la prima risposta, qui ci siamo baciati per la prima volta, ammettilo ho fatto una giocata a scendere a prendere i fuochi.')">Riquadro 1</div>
+    <div class="riquadro" onclick="showMessage(this, 'parco delle cave', 'Hai trovato la seconda risposta, qui ti sei decisa finalmente di chiederci di metterci assieme. Ti ho aspettato e ti aspetterò sempre.')">Riquadro 2</div>
+    <div class="riquadro" onclick="showMessage(this, 'Bovisio Masciago', 'Hai trovato la terza parola, qua ci ho lasciato un pezzo di cuore pure io. Bovisio era dentro la mia famiglia già da prima, ma ora tu sei la mia famiglia. 45°36\'33.9"N 9°09\'38.7"E')">Riquadro 3</div>
+    <div class="riquadro" onclick="showMessage(this, 'Misano Adriatico', 'Hai trovato la quarta parola, qui ho fatto una delle migliori vacanze di sempre. Viverti ogni secondo è stato fantastico.')">Riquadro 4</div>
+    <div class="riquadro" onclick="showMessage(this, 'tarti', 'Hai trovato la quinta parola, questo è stato il primo nome che mi hai trovato. Lo odiavo, però ora mi ci sono abituato e mi manca essere chiamato così.')">Riquadro 5</div>
+    <div class="riquadro" onclick="showMessage(this, 'zoe', 'Hai trovato la sesta parola, sai quanto ho sofferto per Sting e in lei ho ritrovato l\'amore per lui.')">Riquadro 6</div>
+    <div class="riquadro riquadro-7" onclick="showMessage(this, '7 mesi', 'Hai trovato la settima parola, qui non ho scritto nulla, rimane l\'ultimo regalo, lì le mie parole parlano per me.')">Riquadro 7</div> <!-- Riquadro 7 posizionato al centro sotto il riquadro 5 -->
+  </div>
+
+  <script>
+    function showMessage(element, parolaSegreta, messaggioRomantico) {
+      const input = prompt("Inserisci la parola segreta:");
+      if (input === parolaSegreta) {
+        element.innerHTML = messaggioRomantico;
+      } else {
+        element.innerHTML = "Parola sbagliata! Riprova.";
+      }
+    }
+  </script>
+</body>
+</html>
